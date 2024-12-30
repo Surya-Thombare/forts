@@ -20,10 +20,6 @@ export function FortsContainer({ initialForts }: FortsContainerProps) {
   const [selectedRegion, setSelectedRegion] = useState('All');
 
   useEffect(() => {
-    filterForts();
-  }, [searchQuery, selectedType, selectedRegion]);
-
-  const filterForts = () => {
     let filtered = [...forts];
 
     // Apply search filter
@@ -47,7 +43,7 @@ export function FortsContainer({ initialForts }: FortsContainerProps) {
     }
 
     setFilteredForts(filtered);
-  };
+  }, [searchQuery, selectedType, selectedRegion, forts]);
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
