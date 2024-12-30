@@ -18,6 +18,13 @@ const nextConfig: NextConfig = {
         pathname: '/**',
         search: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'rfumhyjerjvqjxownxpc.supabase.co',
+        port: '',
+        pathname: '/**',
+        search: '',
+      },
     ],
   },
 };
