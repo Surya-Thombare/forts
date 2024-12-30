@@ -44,7 +44,7 @@ const fortSchema = z.object({
   current_status: z.string(),
   best_time_to_visit: z.string(),
   trek_difficulty: z.enum(TREK_DIFFICULTIES),
-  entrance_fee: z.string().transform((val) => val ? parseFloat(val) : null),
+  entrance_fee: z.string().optional(),
 });
 
 type FortFormValues = z.infer<typeof fortSchema>;
@@ -63,7 +63,7 @@ export function FortForm() {
       significance: '',
       current_status: '',
       best_time_to_visit: '',
-      entrance_fee: 0,
+      entrance_fee: '',
     },
   });
 
