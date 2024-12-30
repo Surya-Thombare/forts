@@ -4,10 +4,10 @@ import { FortDetailView } from '@/components/FortDetailView';
 import { DeleteFortButton } from '@/components/DeleteFortButton';
 
 type FortDetailPageProps = {
-  params: {
+  params: Promise<{
     id: string;
-  };
-}
+  }>;
+};
 
 async function getFort(id: string) {
   const { data: fort, error } = await supabase
@@ -24,7 +24,8 @@ async function getFort(id: string) {
 }
 
 export default async function FortDetailPage({ params }: FortDetailPageProps) {
-  const fort = await getFort(params.id);
+  const resolvedParams = await params;
+  const fort = await getFort(resolvedParams.id);
 
   if (!fort) {
     notFound();
