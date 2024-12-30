@@ -1,4 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 // Define the database schema types
 export type Database = {
