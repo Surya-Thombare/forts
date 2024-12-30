@@ -3,7 +3,7 @@ import { supabase } from '@/lib/supabase';
 import { FortDetailView } from '@/components/FortDetailView';
 import { DeleteFortButton } from '@/components/DeleteFortButton';
 
-interface FortDetailPageProps {
+type FortDetailPageProps = {
   params: {
     id: string;
   };
