@@ -13,8 +13,7 @@ interface FortsContainerProps {
 }
 
 export function FortsContainer({ initialForts }: FortsContainerProps) {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [forts, setForts] = useState<Fort[]>(initialForts);
+  const forts = initialForts;
   const [filteredForts, setFilteredForts] = useState<Fort[]>(initialForts);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedType, setSelectedType] = useState('All');
